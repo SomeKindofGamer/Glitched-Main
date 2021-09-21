@@ -1,0 +1,4 @@
+:gfPortrait:Hey!
+:gfPortrait:You seem new!
+:gfPortrait:Let me show you the basics.
+:bf:Alright...
