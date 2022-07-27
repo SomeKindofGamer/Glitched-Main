@@ -49,8 +49,6 @@ class Main extends Sprite
 		}
 	}
 
-	public static var webmHandler:WebmHandler;
-
 	private function init(?E:Event):Void
 	{
 		if (hasEventListener(Event.ADDED_TO_STAGE))
@@ -75,17 +73,20 @@ class Main extends Sprite
 			gameHeight = Math.ceil(stageHeight / zoom);
 		}
 
-		#if cpp
-		initialState = Caching;
-		game = new FlxGame(gameWidth, gameHeight, initialState, zoom, framerate, framerate, skipSplash, startFullscreen);
-		#else
-		game = new FlxGame(gameWidth, gameHeight, initialState, zoom, framerate, framerate, skipSplash, startFullscreen);
+		#if !debug
+		initialState = TitleState;
 		#end
+
+		game = new FlxGame(gameWidth, gameHeight, initialState, zoom, framerate, framerate, skipSplash, startFullscreen);
+
 		addChild(game);
-		
+
 		#if !mobile
-		fpsCounter = new FPS(10, 3, 0xFFFFFF);
+		fpsCounter = new FPS(10, 3, 0xFF00FFFF);
 		addChild(fpsCounter);
+		
+		memoryCounter = new MemoryCounter(10, 3, 0xFF00FFFF);
+		addChild(memoryCounter);
 		toggleFPS(FlxG.save.data.fps);
 
 		#end
@@ -102,11 +103,18 @@ class Main extends Sprite
 	public function changeFPSColor(color:FlxColor)
 	{
 		fpsCounter.textColor = color;
+		memoryCounter.textColor = color;
 	}
 
 	public function setFPSCap(cap:Float)
 	{
 		openfl.Lib.current.stage.frameRate = cap;
+	}
+
+	public static var memoryCounter:MemoryCounter;
+
+	public static function toggleMem(memEnabled:Bool):Void {
+		memoryCounter.visible = memEnabled;
 	}
 
 	public function getFPSCap():Float

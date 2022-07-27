@@ -4,5 +4,9 @@ philly
 limo
 mall
 mallEvil
+mallFusion
 school
 schoolEvil
+warzone
+warzone-stress
+darkness

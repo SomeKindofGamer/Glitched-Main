@@ -1,4 +1,11 @@
-:gfPortrait:Hey!
-:gfPortrait:You seem new!
-:gfPortrait:Let me show you the basics.
-:bf:Alright...
+:gf:I told my dad about you.
+:bf:What?!
+:bf:He isn't gonna like me!
+:gf:He wants to rap battle you
+:gf:No worries.
+:gf:I can get you started!
+:bf:Oh okay
+:gf:Something easy.
+:gf:Alright I found a song
+:gf:Let's do this!
+:bf:Let's go!

@@ -25,6 +25,10 @@ class AnimationDebug extends FlxState
 	var daAnim:String = 'spooky';
 	var camFollow:FlxObject;
 
+	var background:FlxSprite;
+	var curt:FlxSprite;
+	var front:FlxSprite;
+
 	public function new(daAnim:String = 'spooky')
 	{
 		super();
@@ -35,9 +39,32 @@ class AnimationDebug extends FlxState
 	{
 		FlxG.sound.music.stop();
 
-		var gridBG:FlxSprite = FlxGridOverlay.create(10, 10);
-		gridBG.scrollFactor.set(0.5, 0.5);
-		add(gridBG);
+		// var gridBG:FlxSprite = FlxGridOverlay.create(10, 10);
+		// gridBG.scrollFactor.set(0.5, 0.5);
+		// add(gridBG);
+
+		background = new FlxSprite(-600, -525).loadGraphic(Paths.image('stageback', 'shared'));
+		front = new FlxSprite(-650, 325).loadGraphic(Paths.image('stagefront', 'shared'));
+		curt = new FlxSprite(-500, -625).loadGraphic(Paths.image('stagecurtains', 'shared'));
+		background.antialiasing = FlxG.save.data.antialiasing;
+		front.antialiasing = FlxG.save.data.antialiasing;
+		curt.antialiasing = FlxG.save.data.antialiasing;
+
+		background.screenCenter(X);
+		background.scale.set(0.7, 0.7);
+		front.screenCenter(X);
+		front.scale.set(0.7, 0.7);
+		curt.screenCenter(X);
+		curt.scale.set(0.7, 0.7);
+
+		background.scrollFactor.set(0.9, 0.9);
+		curt.scrollFactor.set(0.9, 0.9);
+		front.scrollFactor.set(0.9, 0.9);
+
+		add(background);
+		add(front);
+		add(curt);
+
 
 		if (daAnim == 'bf')
 			isDad = false;

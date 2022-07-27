@@ -1,6 +1,5 @@
 package;
 
-import flixel.input.gamepad.FlxGamepad;
 import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
 import openfl.Lib;
@@ -27,27 +26,27 @@ class OptionsMenu extends MusicBeatState
 	var options:Array<OptionCategory> = [
 		new OptionCategory("Gameplay", [
 			new DFJKOption(controls),
-			new DownscrollOption("Change the layout of the strumline."),
-			new GhostTapOption("Ghost Tapping is when you tap a direction and it doesn't give you a miss."),
+			new DownscrollOption("Changes the layout of the notes."),
+			new MiddlescrollOption("Moves the Strumline into the middle of the screen."),
+			new ResetButtonOption("Toggle pressing R to gameover."),
+			new GhostTapOption("Ghost Tapping is when you tap and it doesn't give you a miss."),
 			new Judgement("Customize your Hit Timings (LEFT or RIGHT)"),
 			#if desktop
 			new FPSCapOption("Cap your FPS"),
 			#end
-			new ScrollSpeedOption("Change your scroll speed (1 = Chart dependent)"),
+			new ScrollSpeedOption("Change your scroll speed (1 = Regular Speed)"),
 			new AccuracyDOption("Change how accuracy is calculated. (Accurate = Simple, Complex = Milisecond Based)"),
-			new ResetButtonOption("Toggle pressing R to gameover."),
-			// new OffsetMenu("Get a note offset based off of your inputs!"),
 			new CustomizeGameplay("Drag'n'Drop Gameplay Modules around to your preference")
 		]),
 		new OptionCategory("Appearance", [
-			new DistractionsAndEffectsOption("Toggle stage distractions that can hinder your gameplay."),
-			new CamZoomOption("Toggle the camera zoom in-game."),
 			#if desktop
-			new RainbowFPSOption("Make the FPS Counter Rainbow"),
+			new DistractionsAndEffectsOption("Toggle stage distractions that can hinder your gameplay."),
 			new AccuracyOption("Display accuracy information."),
-			new NPSDisplayOption("Shows your current Notes Per Second."),
+			new NoteSplashOption("Have the static notes flash when you hit."),
 			new SongPositionOption("Show the songs current position (as a bar)"),
-			new CpuStrums("CPU's strumline lights up when a note hits it."),
+			new HideScore("Hide the Score Text"),
+			#else
+			new DistractionsAndEffectsOption("Toggle stage distractions that can hinder your gameplay."),
 			#end
 		]),
 		
@@ -56,14 +55,18 @@ class OptionsMenu extends MusicBeatState
 			new FPSOption("Toggle the FPS Counter"),
 			new ReplayOption("View replays"),
 			#end
-			new FlashingLightsOption("Toggle flashing lights that can cause epileptic seizures and strain."),
 			new WatermarkOption("Enable and disable all watermarks from the engine."),
-			new ScoreScreen("Show the score screen after the end of a song"),
-			new ShowInput("Display every single input in the score screen."),
-			new Optimization("No backgrounds, no characters, centered notes, no player 2."),
-			new BotPlay("Showcase your charts and mods with autoplay."),
-		])
-		
+			new BotPlay("Showcase your charts and mods with autoplay. (Glitch Arrows will still be hit)")
+		]),
+
+		#if desktop
+		new OptionCategory("Extras", [
+			new FlashingLightsOption("Toggle flashing lights that can cause epileptic seizures and strain."),
+			new RainbowFPSOption("Make the FPS Counter and Memory Counter Rainbow"),
+			new CpuStrums("Opponent notes glow when hit"),
+			new CrapscrollOption("why did i add this (Downscroll is REQUIRED)"),
+		]),
+		#end
 	];
 
 	public var acceptInput:Bool = true;
@@ -133,42 +136,23 @@ class OptionsMenu extends MusicBeatState
 				isCat = false;
 				grpControls.clear();
 				for (i in 0...options.length)
-				{
-					var controlLabel:Alphabet = new Alphabet(0, (70 * i) + 30, options[i].getName(), true, false);
-					controlLabel.isMenuItem = true;
-					controlLabel.targetY = i;
-					grpControls.add(controlLabel);
-					// DONT PUT X IN THE FIRST PARAMETER OF new ALPHABET() !!
-				}
-				
+					{
+						var controlLabel:Alphabet = new Alphabet(0, (70 * i) + 30, options[i].getName(), true, false);
+						controlLabel.isMenuItem = true;
+						controlLabel.targetY = i;
+						grpControls.add(controlLabel);
+						// DONT PUT X IN THE FIRST PARAMETER OF new ALPHABET() !!
+					}
 				curSelected = 0;
-				
-				changeSelection(curSelected);
 			}
-
-			var gamepad:FlxGamepad = FlxG.gamepads.lastActive;
-
-			if (gamepad != null)
-			{
-				if (gamepad.justPressed.DPAD_UP)
-				{
-					FlxG.sound.play(Paths.sound('scrollMenu'));
-					changeSelection(-1);
-				}
-				if (gamepad.justPressed.DPAD_DOWN)
-				{
-					FlxG.sound.play(Paths.sound('scrollMenu'));
-					changeSelection(1);
-				}
-			}
-			
-			if (FlxG.keys.justPressed.UP)
+			if (controls.UP_P)
 				changeSelection(-1);
-			if (FlxG.keys.justPressed.DOWN)
+			if (controls.DOWN_P)
 				changeSelection(1);
 			
 			if (isCat)
 			{
+				
 				if (currentSelectedCat.getOptions()[curSelected].getAccept())
 				{
 					if (FlxG.keys.pressed.SHIFT)
@@ -188,6 +172,7 @@ class OptionsMenu extends MusicBeatState
 				}
 				else
 				{
+
 					if (FlxG.keys.pressed.SHIFT)
 					{
 						if (FlxG.keys.justPressed.RIGHT)
@@ -200,7 +185,7 @@ class OptionsMenu extends MusicBeatState
 					else if (FlxG.keys.pressed.LEFT)
 						FlxG.save.data.offset -= 0.1;
 					
-					versionShit.text = "Offset (Left, Right, Shift for slow): " + HelperFunctions.truncateFloat(FlxG.save.data.offset,2) + " - Description - " + currentDescription;
+				
 				}
 				if (currentSelectedCat.getOptions()[curSelected].getAccept())
 					versionShit.text =  currentSelectedCat.getOptions()[curSelected].getValue() + " - Description - " + currentDescription;
@@ -210,18 +195,16 @@ class OptionsMenu extends MusicBeatState
 			else
 			{
 				if (FlxG.keys.pressed.SHIFT)
-				{
-					if (FlxG.keys.justPressed.RIGHT)
+					{
+						if (FlxG.keys.justPressed.RIGHT)
+							FlxG.save.data.offset += 0.1;
+						else if (FlxG.keys.justPressed.LEFT)
+							FlxG.save.data.offset -= 0.1;
+					}
+					else if (FlxG.keys.pressed.RIGHT)
 						FlxG.save.data.offset += 0.1;
-					else if (FlxG.keys.justPressed.LEFT)
+					else if (FlxG.keys.pressed.LEFT)
 						FlxG.save.data.offset -= 0.1;
-				}
-				else if (FlxG.keys.pressed.RIGHT)
-					FlxG.save.data.offset += 0.1;
-				else if (FlxG.keys.pressed.LEFT)
-					FlxG.save.data.offset -= 0.1;
-				
-				versionShit.text = "Offset (Left, Right, Shift for slow): " + HelperFunctions.truncateFloat(FlxG.save.data.offset,2) + " - Description - " + currentDescription;
 			}
 		
 
@@ -233,8 +216,10 @@ class OptionsMenu extends MusicBeatState
 				if (isCat)
 				{
 					if (currentSelectedCat.getOptions()[curSelected].press()) {
-						grpControls.members[curSelected].reType(currentSelectedCat.getOptions()[curSelected].getDisplay());
-						trace(currentSelectedCat.getOptions()[curSelected].getDisplay());
+						grpControls.remove(grpControls.members[curSelected]);
+						var ctrl:Alphabet = new Alphabet(0, (70 * curSelected) + 30, currentSelectedCat.getOptions()[curSelected].getDisplay(), true, false);
+						ctrl.isMenuItem = true;
+						grpControls.add(ctrl);
 					}
 				}
 				else
@@ -252,8 +237,6 @@ class OptionsMenu extends MusicBeatState
 						}
 					curSelected = 0;
 				}
-				
-				changeSelection();
 			}
 		}
 		FlxG.save.flush();

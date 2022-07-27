@@ -104,10 +104,12 @@ class ResultsScreen extends FlxSubState
         
         add(graphSprite);
 
-
+        var sicks2 = HelperFunctions.truncateFloat(PlayState.sicks2 / PlayState.goods,1);
         var sicks = HelperFunctions.truncateFloat(PlayState.sicks / PlayState.goods,1);
         var goods = HelperFunctions.truncateFloat(PlayState.goods / PlayState.bads,1);
 
+        if (sicks2 == Math.POSITIVE_INFINITY)
+            sicks2 = 0;
         if (sicks == Math.POSITIVE_INFINITY)
             sicks = 0;
         if (goods == Math.POSITIVE_INFINITY)

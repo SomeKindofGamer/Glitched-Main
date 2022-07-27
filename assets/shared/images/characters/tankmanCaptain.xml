@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="tankmanCaptain.png">
+	<!-- Created with Adobe Animate version 21.0.6.41649 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="PRETTY GOOD tankman instance 0000" x="0" y="0" width="529" height="589"/>
+	<SubTexture name="PRETTY GOOD tankman instance 0001" x="529" y="0" width="529" height="589"/>
+	<SubTexture name="PRETTY GOOD tankman instance 0002" x="1058" y="0" width="529" height="589"/>
+	<SubTexture name="PRETTY GOOD tankman instance 0003" x="1587" y="0" width="529" height="589"/>
+	<SubTexture name="PRETTY GOOD tankman instance 0004" x="2116" y="0" width="529" height="589"/>
+	<SubTexture name="PRETTY GOOD tankman instance 0005" x="2645" y="0" width="529" height="589"/>
+	<SubTexture name="PRETTY GOOD tankman instance 0006" x="2645" y="0" width="529" height="589"/>
+	<SubTexture name="PRETTY GOOD tankman instance 0007" x="2645" y="0" width="529" height="589"/>
+	<SubTexture name="PRETTY GOOD tankman instance 0008" x="2645" y="0" width="529" height="589"/>
+	<SubTexture name="PRETTY GOOD tankman instance 0009" x="2645" y="0" width="529" height="589"/>
+	<SubTexture name="PRETTY GOOD tankman instance 0010" x="2645" y="0" width="529" height="589"/>
+	<SubTexture name="PRETTY GOOD tankman instance 0011" x="2645" y="0" width="529" height="589"/>
+	<SubTexture name="PRETTY GOOD tankman instance 0012" x="2645" y="0" width="529" height="589"/>
+	<SubTexture name="PRETTY GOOD tankman instance 0013" x="2645" y="0" width="529" height="589"/>
+	<SubTexture name="PRETTY GOOD tankman instance 0014" x="2645" y="0" width="529" height="589"/>
+	<SubTexture name="PRETTY GOOD tankman instance 0015" x="2645" y="0" width="529" height="589"/>
+	<SubTexture name="PRETTY GOOD tankman instance 0016" x="2645" y="0" width="529" height="589"/>
+	<SubTexture name="PRETTY GOOD tankman instance 0017" x="2645" y="0" width="529" height="589"/>
+	<SubTexture name="PRETTY GOOD tankman instance 0018" x="2645" y="0" width="529" height="589"/>
+	<SubTexture name="PRETTY GOOD tankman instance 0019" x="2645" y="0" width="529" height="589"/>
+	<SubTexture name="PRETTY GOOD tankman instance 0020" x="2645" y="0" width="529" height="589"/>
+	<SubTexture name="PRETTY GOOD tankman instance 0021" x="2645" y="0" width="529" height="589"/>
+	<SubTexture name="PRETTY GOOD tankman instance 0022" x="2645" y="0" width="529" height="589"/>
+	<SubTexture name="PRETTY GOOD tankman instance 0023" x="2645" y="0" width="529" height="589"/>
+	<SubTexture name="PRETTY GOOD tankman instance 0024" x="2645" y="0" width="529" height="589"/>
+	<SubTexture name="PRETTY GOOD tankman instance 0025" x="2645" y="0" width="529" height="589"/>
+	<SubTexture name="PRETTY GOOD tankman instance 0026" x="2645" y="0" width="529" height="589"/>
+	<SubTexture name="PRETTY GOOD tankman instance 0027" x="2645" y="0" width="529" height="589"/>
+	<SubTexture name="PRETTY GOOD tankman instance 0028" x="2645" y="0" width="529" height="589"/>
+	<SubTexture name="PRETTY GOOD tankman instance 0029" x="2645" y="0" width="529" height="589"/>
+	<SubTexture name="PRETTY GOOD tankman instance 0030" x="2645" y="0" width="529" height="589"/>
+	<SubTexture name="PRETTY GOOD tankman instance 0031" x="2645" y="0" width="529" height="589"/>
+	<SubTexture name="PRETTY GOOD tankman instance 0032" x="2645" y="0" width="529" height="589"/>
+	<SubTexture name="PRETTY GOOD tankman instance 0033" x="2645" y="0" width="529" height="589"/>
+	<SubTexture name="PRETTY GOOD tankman instance 0034" x="2645" y="0" width="529" height="589"/>
+	<SubTexture name="PRETTY GOOD tankman instance 0035" x="2645" y="0" width="529" height="589"/>
+	<SubTexture name="PRETTY GOOD tankman instance 0036" x="2645" y="0" width="529" height="589"/>
+	<SubTexture name="PRETTY GOOD tankman instance 0037" x="2645" y="0" width="529" height="589"/>
+	<SubTexture name="PRETTY GOOD tankman instance 0038" x="2645" y="0" width="529" height="589"/>
+	<SubTexture name="PRETTY GOOD tankman instance 0039" x="2645" y="0" width="529" height="589"/>
+	<SubTexture name="PRETTY GOOD tankman instance 0040" x="3174" y="0" width="529" height="589"/>
+	<SubTexture name="PRETTY GOOD tankman instance 0041" x="0" y="589" width="529" height="589"/>
+	<SubTexture name="PRETTY GOOD tankman instance 0042" x="529" y="589" width="529" height="589"/>
+	<SubTexture name="PRETTY GOOD tankman instance 0043" x="1058" y="589" width="529" height="589"/>
+	<SubTexture name="PRETTY GOOD tankman instance 0044" x="1058" y="589" width="529" height="589"/>
+	<SubTexture name="PRETTY GOOD tankman instance 0045" x="1587" y="589" width="529" height="589"/>
+	<SubTexture name="PRETTY GOOD tankman instance 0046" x="2116" y="589" width="529" height="589"/>
+	<SubTexture name="PRETTY GOOD tankman instance 0047" x="2116" y="589" width="529" height="589"/>
+	<SubTexture name="PRETTY GOOD tankman instance 0048" x="2645" y="589" width="529" height="589"/>
+	<SubTexture name="PRETTY GOOD tankman instance 0049" x="2645" y="589" width="529" height="589"/>
+	<SubTexture name="PRETTY GOOD tankman instance 0050" x="3174" y="589" width="529" height="589"/>
+	<SubTexture name="PRETTY GOOD tankman instance 0051" x="0" y="1178" width="529" height="589"/>
+	<SubTexture name="PRETTY GOOD tankman instance 0052" x="0" y="1178" width="529" height="589"/>
+	<SubTexture name="PRETTY GOOD tankman instance 0053" x="529" y="1178" width="529" height="589"/>
+	<SubTexture name="PRETTY GOOD tankman instance 0054" x="529" y="1178" width="529" height="589"/>
+	<SubTexture name="PRETTY GOOD tankman instance 0055" x="529" y="1178" width="529" height="589"/>
+	<SubTexture name="PRETTY GOOD tankman instance 0056" x="529" y="1178" width="529" height="589"/>
+	<SubTexture name="PRETTY GOOD tankman instance 0057" x="1058" y="1178" width="529" height="589"/>
+	<SubTexture name="PRETTY GOOD tankman instance 0058" x="1058" y="1178" width="529" height="589"/>
+	<SubTexture name="PRETTY GOOD tankman instance 0059" x="1587" y="1178" width="529" height="589"/>
+	<SubTexture name="PRETTY GOOD tankman instance 0060" x="1587" y="1178" width="529" height="589"/>
+	<SubTexture name="PRETTY GOOD tankman instance 0061" x="2116" y="1178" width="529" height="589"/>
+	<SubTexture name="PRETTY GOOD tankman instance 0062" x="2116" y="1178" width="529" height="589"/>
+	<SubTexture name="PRETTY GOOD tankman instance 0063" x="2116" y="1178" width="529" height="589"/>
+	<SubTexture name="PRETTY GOOD tankman instance 0064" x="2116" y="1178" width="529" height="589"/>
+	<SubTexture name="PRETTY GOOD tankman instance 0065" x="2116" y="1178" width="529" height="589"/>
+	<SubTexture name="PRETTY GOOD tankman instance 0066" x="2116" y="1178" width="529" height="589"/>
+	<SubTexture name="PRETTY GOOD tankman instance 0067" x="2116" y="1178" width="529" height="589"/>
+	<SubTexture name="PRETTY GOOD tankman instance 0068" x="2116" y="1178" width="529" height="589"/>
+	<SubTexture name="PRETTY GOOD tankman instance 0069" x="2116" y="1178" width="529" height="589"/>
+	<SubTexture name="TANKMAN UGH instance 0000" x="2645" y="1178" width="402" height="565"/>
+	<SubTexture name="TANKMAN UGH instance 0001" x="2645" y="1178" width="402" height="565"/>
+	<SubTexture name="TANKMAN UGH instance 0002" x="3047" y="1178" width="402" height="565"/>
+	<SubTexture name="TANKMAN UGH instance 0003" x="3047" y="1178" width="402" height="565"/>
+	<SubTexture name="TANKMAN UGH instance 0004" x="3449" y="1178" width="402" height="565"/>
+	<SubTexture name="TANKMAN UGH instance 0005" x="3449" y="1178" width="402" height="565"/>
+	<SubTexture name="TANKMAN UGH instance 0006" x="0" y="1767" width="402" height="565"/>
+	<SubTexture name="TANKMAN UGH instance 0007" x="0" y="1767" width="402" height="565"/>
+	<SubTexture name="TANKMAN UGH instance 0008" x="0" y="1767" width="402" height="565"/>
+	<SubTexture name="TANKMAN UGH instance 0009" x="0" y="1767" width="402" height="565"/>
+	<SubTexture name="TANKMAN UGH instance 0010" x="0" y="1767" width="402" height="565"/>
+	<SubTexture name="TANKMAN UGH instance 0011" x="0" y="1767" width="402" height="565"/>
+	<SubTexture name="TANKMAN UGH instance 0012" x="0" y="1767" width="402" height="565"/>
+	<SubTexture name="TANKMAN UGH instance 0013" x="0" y="1767" width="402" height="565"/>
+	<SubTexture name="TANKMAN UGH instance 0014" x="0" y="1767" width="402" height="565"/>
+	<SubTexture name="TANKMAN UGH instance 0015" x="0" y="1767" width="402" height="565"/>
+	<SubTexture name="Tankman DOWN note instance 0000" x="402" y="1767" width="579" height="469"/>
+	<SubTexture name="Tankman DOWN note instance 0001" x="402" y="1767" width="579" height="469"/>
+	<SubTexture name="Tankman DOWN note instance 0002" x="981" y="1767" width="579" height="469"/>
+	<SubTexture name="Tankman DOWN note instance 0003" x="981" y="1767" width="579" height="469"/>
+	<SubTexture name="Tankman DOWN note instance 0004" x="981" y="1767" width="579" height="469"/>
+	<SubTexture name="Tankman DOWN note instance 0005" x="981" y="1767" width="579" height="469"/>
+	<SubTexture name="Tankman DOWN note instance 0006" x="981" y="1767" width="579" height="469"/>
+	<SubTexture name="Tankman DOWN note instance 0007" x="981" y="1767" width="579" height="469"/>
+	<SubTexture name="Tankman DOWN note instance 0008" x="981" y="1767" width="579" height="469"/>
+	<SubTexture name="Tankman DOWN note instance 0009" x="981" y="1767" width="579" height="469"/>
+	<SubTexture name="Tankman Idle Dance instance 0000" x="1560" y="1767" width="431" height="573"/>
+	<SubTexture name="Tankman Idle Dance instance 0001" x="1560" y="1767" width="431" height="573"/>
+	<SubTexture name="Tankman Idle Dance instance 0002" x="1991" y="1767" width="431" height="573"/>
+	<SubTexture name="Tankman Idle Dance instance 0003" x="1991" y="1767" width="431" height="573"/>
+	<SubTexture name="Tankman Idle Dance instance 0004" x="2422" y="1767" width="431" height="573"/>
+	<SubTexture name="Tankman Idle Dance instance 0005" x="2422" y="1767" width="431" height="573"/>
+	<SubTexture name="Tankman Idle Dance instance 0006" x="2853" y="1767" width="431" height="573"/>
+	<SubTexture name="Tankman Idle Dance instance 0007" x="2853" y="1767" width="431" height="573"/>
+	<SubTexture name="Tankman Idle Dance instance 0008" x="3284" y="1767" width="431" height="573"/>
+	<SubTexture name="Tankman Idle Dance instance 0009" x="3284" y="1767" width="431" height="573"/>
+	<SubTexture name="Tankman Idle Dance instance 0010" x="0" y="2340" width="431" height="573"/>
+	<SubTexture name="Tankman Idle Dance instance 0011" x="0" y="2340" width="431" height="573"/>
+	<SubTexture name="Tankman Idle Dance instance 0012" x="0" y="2340" width="431" height="573"/>
+	<SubTexture name="Tankman Idle Dance instance 0013" x="0" y="2340" width="431" height="573"/>
+	<SubTexture name="Tankman Note Left instance 0000" x="431" y="2340" width="504" height="540"/>
+	<SubTexture name="Tankman Note Left instance 0001" x="431" y="2340" width="504" height="540"/>
+	<SubTexture name="Tankman Note Left instance 0002" x="935" y="2340" width="504" height="540"/>
+	<SubTexture name="Tankman Note Left instance 0003" x="935" y="2340" width="504" height="540"/>
+	<SubTexture name="Tankman Note Left instance 0004" x="935" y="2340" width="504" height="540"/>
+	<SubTexture name="Tankman Note Left instance 0005" x="935" y="2340" width="504" height="540"/>
+	<SubTexture name="Tankman Note Left instance 0006" x="935" y="2340" width="504" height="540"/>
+	<SubTexture name="Tankman Note Left instance 0007" x="935" y="2340" width="504" height="540"/>
+	<SubTexture name="Tankman Right Note instance 0000" x="1439" y="2340" width="493" height="560"/>
+	<SubTexture name="Tankman Right Note instance 0001" x="1439" y="2340" width="493" height="560"/>
+	<SubTexture name="Tankman Right Note instance 0002" x="1932" y="2340" width="493" height="560"/>
+	<SubTexture name="Tankman Right Note instance 0003" x="1932" y="2340" width="493" height="560"/>
+	<SubTexture name="Tankman Right Note instance 0004" x="1932" y="2340" width="493" height="560"/>
+	<SubTexture name="Tankman Right Note instance 0005" x="1932" y="2340" width="493" height="560"/>
+	<SubTexture name="Tankman Right Note instance 0006" x="1932" y="2340" width="493" height="560"/>
+	<SubTexture name="Tankman Right Note instance 0007" x="1932" y="2340" width="493" height="560"/>
+	<SubTexture name="Tankman Right Note instance 0008" x="1932" y="2340" width="493" height="560"/>
+	<SubTexture name="Tankman Right Note instance 0009" x="1932" y="2340" width="493" height="560"/>
+	<SubTexture name="Tankman UP note instance 0000" x="2425" y="2340" width="505" height="619"/>
+	<SubTexture name="Tankman UP note instance 0001" x="2425" y="2340" width="505" height="619"/>
+	<SubTexture name="Tankman UP note instance 0002" x="2930" y="2340" width="505" height="619"/>
+	<SubTexture name="Tankman UP note instance 0003" x="2930" y="2340" width="505" height="619"/>
+	<SubTexture name="Tankman UP note instance 0004" x="2930" y="2340" width="505" height="619"/>
+	<SubTexture name="Tankman UP note instance 0005" x="2930" y="2340" width="505" height="619"/>
+	<SubTexture name="Tankman UP note instance 0006" x="2930" y="2340" width="505" height="619"/>
+	<SubTexture name="Tankman UP note instance 0007" x="2930" y="2340" width="505" height="619"/>
+	<SubTexture name="Tankman UP note instance 0008" x="2930" y="2340" width="505" height="619"/>
+	<SubTexture name="Tankman UP note instance 0009" x="2930" y="2340" width="505" height="619"/>
+</TextureAtlas>

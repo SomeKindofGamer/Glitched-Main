@@ -1,6 +1,5 @@
 package;
 
-import flixel.input.gamepad.FlxGamepad;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.addons.transition.FlxTransitionableState;
@@ -27,34 +26,44 @@ class StoryMenuState extends MusicBeatState
 	var weekData:Array<Dynamic> = [
 		['Tutorial'],
 		['Bopeebo', 'Fresh', 'Dad Battle'],
-		['Spookeez', 'South'],
-		//['Pico', 'Philly Nice', "Blammed"],
-		//['Satin Panties', "High", "Milf"],
-		//['Cocoa', 'Eggnog', 'Winter Horrorland'],
-		//['Senpai', 'Roses', 'Thorns']
+		['Spookeez', 'South', 'Spooked-Off'],
+		["Pico", "Philly", "Blammed"],
+		["Satin-Panties", "High", "Milf"],
+		["Cocoa", "Eggnog"],
+		//['Horrorland', 'Redemption', "End-Of-Time"],
+		["End-Of-Time"],
+		["Senpai", "Roses", 'Thorns'],
+		["Ugh", "Guns", "Stress"],
+		["Take-Cover", "Final-Chance", "Freed"], 
 	];
-	var curDifficulty:Int = 1;
+	var curDifficulty:Int = 2;
 
-	public static var weekUnlocked:Array<Bool> = [true, true];
+	public static var weekUnlocked:Array<Bool> = [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true];
 
 	var weekCharacters:Array<Dynamic> = [
 		['', 'bf', 'gf'],
 		['dad', 'bf', 'gf'],
 		['spooky', 'bf', 'gf'],
-		//['pico', 'bf', 'gf'],
-		//['mom', 'bf', 'gf'],
-		//['parents-christmas', 'bf', 'gf'],
-		//['senpai', 'bf', 'gf']
+		['pico', 'bf', 'gf'],
+		['mom', 'bf', 'gf'],
+		['parents-christmas', 'bf', 'gf'],
+		['bf', 'bf', 'gf'],
+		['senpai', 'bf', 'gf'],
+		['tankman', 'bf', 'gf'],
+		['', 'bf', ''],
 	];
 
 	var weekNames:Array<String> = [
-		"The First Song",
-		"Father of the Dearest",
-		"The Spookiest Month",
-		//"PICO",
-		//"MOMMY MUST MURDER",
-		//"RED SNOW",
-		//"Hating Simulator ft. Moawling"
+		"",
+		"Father",
+		"A spooky greeting",
+		"Underpaid Assassin",
+		"Futuristic Space Adventure",
+		"Bloody Snow",
+		"Fusion Disaster",
+		"Pixelated Glitch",
+		"Tanked",
+		"Locked Away", 
 	];
 
 	var txtWeekTitle:FlxText;
@@ -167,6 +176,7 @@ class StoryMenuState extends MusicBeatState
 		sprDifficulty.animation.addByPrefix('easy', 'EASY');
 		sprDifficulty.animation.addByPrefix('normal', 'NORMAL');
 		sprDifficulty.animation.addByPrefix('hard', 'HARD');
+		sprDifficulty.animation.addByPrefix('expert', 'EXPERT');
 		sprDifficulty.animation.play('easy');
 		changeDifficulty();
 
@@ -189,7 +199,7 @@ class StoryMenuState extends MusicBeatState
 		txtTracklist.font = rankText.font;
 		txtTracklist.color = 0xFFe55777;
 		add(txtTracklist);
-		// add(rankText);
+		//add(rankText);
 		add(scoreText);
 		add(txtWeekTitle);
 
@@ -223,44 +233,12 @@ class StoryMenuState extends MusicBeatState
 		{
 			if (!selectedWeek)
 			{
-				var gamepad:FlxGamepad = FlxG.gamepads.lastActive;
-
-				if (gamepad != null)
-				{
-					if (gamepad.justPressed.DPAD_UP)
-					{
-						changeWeek(-1);
-					}
-					if (gamepad.justPressed.DPAD_DOWN)
-					{
-						changeWeek(1);
-					}
-
-					if (gamepad.pressed.DPAD_RIGHT)
-						rightArrow.animation.play('press')
-					else
-						rightArrow.animation.play('idle');
-					if (gamepad.pressed.DPAD_LEFT)
-						leftArrow.animation.play('press');
-					else
-						leftArrow.animation.play('idle');
-
-					if (gamepad.justPressed.DPAD_RIGHT)
-					{
-						changeDifficulty(1);
-					}
-					if (gamepad.justPressed.DPAD_LEFT)
-					{
-						changeDifficulty(-1);
-					}
-				}
-
-				if (FlxG.keys.justPressed.UP)
+				if (controls.UP_P)
 				{
 					changeWeek(-1);
 				}
 
-				if (FlxG.keys.justPressed.DOWN)
+				if (controls.DOWN_P)
 				{
 					changeWeek(1);
 				}
@@ -318,23 +296,21 @@ class StoryMenuState extends MusicBeatState
 			PlayState.isStoryMode = true;
 			selectedWeek = true;
 
+			var diffic = "";
+
+			switch (curDifficulty)
+			{
+				case 0:
+					diffic = '-easy';
+				case 2:
+					diffic = '-hard';
+				case 3:
+					diffic = '-expert';
+			}
 
 			PlayState.storyDifficulty = curDifficulty;
 
-			// adjusting the song name to be compatible
-			var songFormat = StringTools.replace(PlayState.storyPlaylist[0], " ", "-");
-			switch (songFormat) {
-				case 'Dad-Battle': songFormat = 'Dadbattle';
-				case 'Philly-Nice': songFormat = 'Philly';
-			}
-
-			var poop:String = Highscore.formatSong(songFormat, curDifficulty);
-			PlayState.sicks = 0;
-			PlayState.bads = 0;
-			PlayState.shits = 0;
-			PlayState.goods = 0;
-			PlayState.campaignMisses = 0;
-			PlayState.SONG = Song.loadFromJson(poop, PlayState.storyPlaylist[0]);
+			PlayState.SONG = Song.loadFromJson(StringTools.replace(PlayState.storyPlaylist[0]," ", "-").toLowerCase() + diffic, StringTools.replace(PlayState.storyPlaylist[0]," ", "-").toLowerCase());
 			PlayState.storyWeek = curWeek;
 			PlayState.campaignScore = 0;
 			new FlxTimer().start(1, function(tmr:FlxTimer)
@@ -349,8 +325,8 @@ class StoryMenuState extends MusicBeatState
 		curDifficulty += change;
 
 		if (curDifficulty < 0)
-			curDifficulty = 2;
-		if (curDifficulty > 2)
+			curDifficulty = 3;
+		if (curDifficulty > 3)
 			curDifficulty = 0;
 
 		sprDifficulty.offset.x = 0;
@@ -366,6 +342,9 @@ class StoryMenuState extends MusicBeatState
 			case 2:
 				sprDifficulty.animation.play('hard');
 				sprDifficulty.offset.x = 20;
+			case 3:
+				sprDifficulty.animation.play('expert');
+				sprDifficulty.offset.x = 70;
 		}
 
 		sprDifficulty.alpha = 0;

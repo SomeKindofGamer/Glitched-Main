@@ -1,16 +1,26 @@
 package;
 
-import lime.utils.Assets;
+import flixel.FlxG;
+import openfl.utils.Assets;
+import lime.utils.Assets as LimeAssets;
+import lime.utils.AssetLibrary;
+import lime.utils.AssetManifest;
+#if sys
+import sys.io.File;
+import sys.FileSystem;
+#else
+import openfl.utils.Assets;
+#end
 
 using StringTools;
 
 class CoolUtil
 {
-	public static var difficultyArray:Array<String> = ['Easy', "Normal", "Hard"];
+	public static var difficultyArray:Array<String> = ['EASY', "NORMAL", "HARD", "EXPERT"];
 
-	public static function difficultyFromInt(difficulty:Int):String
+	public static function difficultyString():String
 	{
-		return difficultyArray[difficulty];
+		return difficultyArray[PlayState.storyDifficulty];
 	}
 
 	public static function coolTextFile(path:String):Array<String>
@@ -45,5 +55,13 @@ class CoolUtil
 			dumbArray.push(i);
 		}
 		return dumbArray;
+	}
+
+	public static function browserLoad(site:String) {
+		#if linux
+		Sys.command('/usr/bin/xdg-open', [site, "&"]);
+		#else
+		FlxG.openURL(site);
+		#end
 	}
 }

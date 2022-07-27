@@ -13,6 +13,16 @@ bf-christmas
 gf-christmas
 monster
 bf-pixel
+bf-pixel-opponent
 senpai
 senpai-angry
 spirit
+bf-fusion
+bf-christmas-corrupt1
+bf-christmas-corrupt
+tankman
+bf-holding-gf
+sunshine-bf
+corrupt-bf-1
+nothing
+demon

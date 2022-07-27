@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="demonthingy.png">
+        <!-- His name is Goof be nice! -->
+	<!-- Created with Adobe Animate version 21.0.6.41649 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Demon Down instance 10000" x="0" y="0" width="160" height="143"/>
+	<SubTexture name="Demon Down instance 10001" x="160" y="0" width="160" height="143"/>
+	<SubTexture name="Demon Down instance 10002" x="160" y="0" width="160" height="143"/>
+	<SubTexture name="Demon Down instance 10003" x="320" y="0" width="160" height="143"/>
+	<SubTexture name="Demon Down instance 10004" x="480" y="0" width="160" height="143"/>
+	<SubTexture name="Demon Down instance 10005" x="640" y="0" width="160" height="143"/>
+	<SubTexture name="Demon Down instance 10006" x="160" y="0" width="160" height="143"/>
+	<SubTexture name="Demon Idle instance 10000" x="800" y="0" width="208" height="235"/>
+	<SubTexture name="Demon Idle instance 10001" x="1008" y="0" width="208" height="235"/>
+	<SubTexture name="Demon Idle instance 10002" x="1216" y="0" width="208" height="235"/>
+	<SubTexture name="Demon Idle instance 10003" x="1424" y="0" width="208" height="235"/>
+	<SubTexture name="Demon Idle instance 10004" x="1632" y="0" width="208" height="235"/>
+	<SubTexture name="Demon Idle instance 10005" x="1840" y="0" width="208" height="235"/>
+	<SubTexture name="Demon Left instance 10000" x="0" y="235" width="178" height="150"/>
+	<SubTexture name="Demon Left instance 10001" x="178" y="235" width="178" height="150"/>
+	<SubTexture name="Demon Left instance 10002" x="356" y="235" width="178" height="150"/>
+	<SubTexture name="Demon Left instance 10003" x="534" y="235" width="178" height="150"/>
+	<SubTexture name="Demon Left instance 10004" x="712" y="235" width="178" height="150"/>
+	<SubTexture name="Demon Left instance 10005" x="890" y="235" width="178" height="150"/>
+	<SubTexture name="Demon Left instance 10006" x="1068" y="235" width="178" height="150"/>
+	<SubTexture name="Demon Left instance 10007" x="1246" y="235" width="178" height="150"/>
+	<SubTexture name="Demon Left instance 10008" x="1424" y="235" width="178" height="150"/>
+	<SubTexture name="Demon Left instance 10009" x="890" y="235" width="178" height="150"/>
+	<SubTexture name="Demon Left instance 10010" x="1602" y="235" width="178" height="150"/>
+	<SubTexture name="Demon Left instance 10011" x="1780" y="235" width="178" height="150"/>
+	<SubTexture name="Demon Left instance 10012" x="0" y="385" width="178" height="150"/>
+	<SubTexture name="Demon Right instance 10000" x="178" y="385" width="179" height="125"/>
+	<SubTexture name="Demon Right instance 10001" x="357" y="385" width="179" height="125"/>
+	<SubTexture name="Demon Right instance 10002" x="536" y="385" width="179" height="125"/>
+	<SubTexture name="Demon Right instance 10003" x="715" y="385" width="179" height="125"/>
+	<SubTexture name="Demon Right instance 10004" x="894" y="385" width="179" height="125"/>
+	<SubTexture name="Demon Right instance 10005" x="1073" y="385" width="179" height="125"/>
+	<SubTexture name="Demon Right instance 10006" x="894" y="385" width="179" height="125"/>
+	<SubTexture name="Demon Right instance 10007" x="1252" y="385" width="179" height="125"/>
+	<SubTexture name="Demon Right instance 10008" x="715" y="385" width="179" height="125"/>
+	<SubTexture name="Demon Up instance 10000" x="1431" y="385" width="171" height="236"/>
+	<SubTexture name="Demon Up instance 10001" x="1602" y="385" width="171" height="236"/>
+	<SubTexture name="Demon Up instance 10002" x="1773" y="385" width="171" height="236"/>
+	<SubTexture name="Demon Up instance 10003" x="0" y="621" width="171" height="236"/>
+	<SubTexture name="Demon Up instance 10004" x="171" y="621" width="171" height="236"/>
+	<SubTexture name="Demon Up instance 10005" x="342" y="621" width="171" height="236"/>
+	<SubTexture name="Demon Up instance 10006" x="513" y="621" width="171" height="236"/>
+	<SubTexture name="Demon Up instance 10007" x="684" y="621" width="171" height="236"/>
+	<SubTexture name="Demon Up instance 10008" x="855" y="621" width="171" height="236"/>
+	<SubTexture name="Demon Up instance 10009" x="1026" y="621" width="171" height="236"/>
+	<SubTexture name="Demon Up instance 10010" x="1197" y="621" width="171" height="236"/>
+</TextureAtlas>

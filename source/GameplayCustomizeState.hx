@@ -10,7 +10,7 @@ import flixel.FlxObject;
 import Discord.DiscordClient;
 import sys.thread.Thread;
 #end
-
+import flixel.addons.effects.FlxTrail;
 import flixel.group.FlxGroup.FlxTypedGroup;
 import openfl.ui.Keyboard;
 import flixel.FlxSprite;
@@ -37,6 +37,7 @@ class GameplayCustomizeState extends MusicBeatState
     var strumLine:FlxSprite;
     var strumLineNotes:FlxTypedGroup<FlxSprite>;
     var playerStrums:FlxTypedGroup<FlxSprite>;
+    var cpuStrums:FlxTypedGroup<FlxSprite>;
     private var camHUD:FlxCamera;
     
     public override function create() {
@@ -99,10 +100,19 @@ class GameplayCustomizeState extends MusicBeatState
 		if (FlxG.save.data.downscroll)
 			strumLine.y = FlxG.height - 165;
 
+        if (FlxG.save.data.middlescroll)
+			strumLine.x -= 235;
+
+        if (FlxG.save.data.crapscroll)
+			strumLine.y = FlxG.height + 45;
+            strumLine.x - 65;
+    
+
 		strumLineNotes = new FlxTypedGroup<FlxSprite>();
 		add(strumLineNotes);
 
 		playerStrums = new FlxTypedGroup<FlxSprite>();
+        cpuStrums = new FlxTypedGroup<FlxSprite>();
 
         sick.cameras = [camHUD];
         strumLine.cameras = [camHUD];
@@ -242,12 +252,27 @@ class GameplayCustomizeState extends MusicBeatState
     
                 babyArrow.ID = i;
     
-                if (player == 1)
-                    playerStrums.add(babyArrow);
+                switch (player)
+			{
+				case 0:
+					if (FlxG.save.data.middlescroll) {
+						babyArrow.visible = false;
+						}
+						babyArrow.visible = true;
+					babyArrow.x += 20;
+					cpuStrums.add(babyArrow);
+				case 1:
+					playerStrums.add(babyArrow);
+			}
     
                 babyArrow.animation.play('static');
                 babyArrow.x += 50;
                 babyArrow.x += ((FlxG.width / 2) * player);
+
+                cpuStrums.forEach(function(spr:FlxSprite)
+                    {
+                        spr.centerOffsets(); // CPU arrows start out slightly off-center
+                    });
     
                 strumLineNotes.add(babyArrow);
             }

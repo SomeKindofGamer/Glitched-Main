@@ -1,10 +1,5 @@
-:dadPortrait:Hey dickface!
-:dadPortrait:You think you can sing with my daughter?!
-:bf:uh yeah?
-:gfPortrait:Dad!
-:dadPortrait:You're testing your patience, Dickface
-:bf:Please stop bulling me
-:bf:You're making me sad
-:dadPortrait:STAY SAD!
-:gfPortrait:Dad!
-:gfPortrait:Why can't you let me be happy!
+:dad:well i've heard alot about you...
+:bf:beep
+:dad:To be honest..
+:dad:If you want to be with my daughter.
+:dad:You gotta get through me first!

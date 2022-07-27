@@ -20,6 +20,7 @@ class HealthIcon extends FlxSprite
 		animation.add('bf-car', [0, 1], 0, false, isPlayer);
 		animation.add('bf-christmas', [0, 1], 0, false, isPlayer);
 		animation.add('bf-pixel', [21, 21], 0, false, isPlayer);
+		animation.add('bf-pixel-opponent', [21, 21], 0, false, isPlayer);
 		animation.add('spooky', [2, 3], 0, false, isPlayer);
 		animation.add('pico', [4, 5], 0, false, isPlayer);
 		animation.add('mom', [6, 7], 0, false, isPlayer);
@@ -37,6 +38,17 @@ class HealthIcon extends FlxSprite
 		animation.add('parents-christmas', [17, 18], 0, false, isPlayer);
 		animation.add('monster', [19, 20], 0, false, isPlayer);
 		animation.add('monster-christmas', [19, 20], 0, false, isPlayer);
+		animation.add('bf-fusion', [24, 25], 0, false, isPlayer);
+		animation.add('bf-fusion-old', [24, 25], 0, false, isPlayer);
+		animation.add('bf-christmas-corrupt1', [26, 27], 0, false, isPlayer);
+		animation.add('bf-christmas-corrupt', [28, 29], 0, false, isPlayer);
+		animation.add('sunshine-bf', [30, 31], 0, false, isPlayer);
+		animation.add('corrupt-bf-1', [26, 27], 0, false, isPlayer);
+		animation.add('demon', [32, 33], 0, false, isPlayer);
+
+		// nothing
+		animation.add('nothing', [40, 40], 0, false, isPlayer);
+
 		animation.play(char);
 
 		switch(char)

@@ -14,7 +14,7 @@ class OutdatedSubState extends MusicBeatState
 {
 	public static var leftState:Bool = false;
 
-	public static var needVer:String = "1.7";
+	public static var needVer:String = "1.1";
 	public static var currChanges:String = "dk";
 	
 	private var bgColors:Array<String> = [
@@ -28,7 +28,7 @@ class OutdatedSubState extends MusicBeatState
 	override function create()
 	{
 		super.create();
-		var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image('yes', 'shared'));
+		var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image('skittlesquad', 'shared'));
 		bg.scale.x *= 1.55;
 		bg.scale.y *= 1.55;
 		bg.screenCenter();
@@ -43,15 +43,12 @@ class OutdatedSubState extends MusicBeatState
 		add(kadeLogo);
 		
 		var txt:FlxText = new FlxText(0, 0, FlxG.width,
-			"Welcome to FNF Glitched-Sides!\nYou are on "
-			+ "\n Version 1.0"
-		 	+ "\n This mod is in development."
-			+ "\n The only songs/weeks are:"
-			+ "\n Week 1 and Week 2 and Blammed in freeplay."
-			+ "\n If you find any bugs please contact me on twitter:"
-			+ "\n @FortniteKitsuni or @FNFGlitchedSide"
-			+ "\n Thank you for playing Glitched-Sides"
-			+ "\n Press Enter to proceed.",
+			"Thank you for playing Glitched-Sides " + MainMenuState.gameVer
+			+ "\n This is a remix/reskin mod!"
+			+ "\n This took a while to make"
+			+ "\n (send your critisim on our twitter)"
+			+ "\n @FNFGlitchedSide"
+			+ "\n Press any key to continue.",
 			32);
 		
 		txt.setFormat("VCR OSD Mono", 32, FlxColor.fromRGB(200, 200, 200), CENTER);
@@ -86,12 +83,7 @@ class OutdatedSubState extends MusicBeatState
 
 	override function update(elapsed:Float)
 	{
-		if (controls.ACCEPT)
-		{
-			leftState = true;
-			FlxG.switchState(new MainMenuState());
-		}
-		if (controls.BACK)
+		if (FlxG.keys.pressed.ANY)
 		{
 			leftState = true;
 			FlxG.switchState(new MainMenuState());

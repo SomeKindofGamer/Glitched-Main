@@ -1,46 +1,47 @@
 import flixel.FlxG;
+import Song.SwagSong;
 
 class Ratings
 {
+    public static var SONG:SwagSong;
     public static function GenerateLetterRank(accuracy:Float) // generate a letter ranking
     {
         var ranking:String = "N/A";
-		if(FlxG.save.data.botplay && !PlayState.loadRep)
-			ranking = "BotPlay";
-
-        if (PlayState.misses == 0 && PlayState.bads == 0 && PlayState.shits == 0 && PlayState.goods == 0) // Marvelous (SICK) Full Combo
-            ranking = "(MFC)";
-        else if (PlayState.misses == 0 && PlayState.bads == 0 && PlayState.shits == 0 && PlayState.goods >= 1) // Good Full Combo (Nothing but Goods & Sicks)
-            ranking = "(GFC)";
-        else if (PlayState.misses == 0) // Regular FC
-            ranking = "(FC)";
+        if (PlayState.misses == 0) // FC
+            ranking = "FC -";
         else if (PlayState.misses < 10) // Single Digit Combo Breaks
-            ranking = "(SDCB)";
-        else // Clear Combo Breaks
-            ranking = "(Clear)";
+            ranking = "SDCB -";
+        else if (PlayState.misses < 20)
+            ranking = "Good -";
+        else if (PlayState.misses < 35)
+            ranking = "Ehhh -";
+        else if (PlayState.misses < 50)
+            ranking = "Bad -";
+        else
+            ranking = "Horrible -";
 
         // WIFE TIME :)))) (based on Wife3)
 
         var wifeConditions:Array<Bool> = [
-            accuracy >= 100, // AAAAAA
-            accuracy >= 99.9935, // AAAAA
-            accuracy >= 99.980, // AAAA:
-            accuracy >= 99.970, // AAAA.
-            accuracy >= 99.955, // AAAA
-            accuracy >= 99.90, // AAA:
-            accuracy >= 99.80, // AAA.
-            accuracy >= 99.70, // AAA
-            accuracy >= 99, // AA:
-            accuracy >= 96.50, // AA.
+            accuracy >= 100, // SSS+
+            accuracy >= 99.9985, // SSS
+            accuracy >= 99.9935, // SS+
+            accuracy >= 99.980, // SS
+            accuracy >= 99.970, // S+
+            accuracy >= 99.955, // S
+            accuracy >= 99.90, // S-
+            accuracy >= 99.80, // S--
+            accuracy >= 99.70, // AAAAA
+            accuracy >= 99, // AAAA
+            accuracy >= 96.50, // AAA
             accuracy >= 93, // AA
-            accuracy >= 90, // A:
-            accuracy >= 85, // A.
+            accuracy >= 90, // A++
+            accuracy >= 85, // A+
             accuracy >= 80, // A
             accuracy >= 70, // B
             accuracy >= 60, // C
             accuracy >= 50, // D
-            accuracy >= 40, // E
-            accuracy < 30, // F
+            accuracy < 40 // F
         ];
 
         for(i in 0...wifeConditions.length)
@@ -51,43 +52,43 @@ class Ratings
                 switch(i)
                 {
                     case 0:
-                        ranking += " AAAAAA";
+                        ranking += " SSS+";
                     case 1:
-                        ranking += " AAAAA";
+                        ranking += " SSS";
                     case 2:
-                        ranking += " AAAA:";
+                        ranking += " SS+";
                     case 3:
-                        ranking += " AAAA.";
+                        ranking += " SS";
                     case 4:
-                        ranking += " AAAA";
+                        ranking += " S+";
                     case 5:
-                        ranking += " AAA:";
+                        ranking += " S";
                     case 6:
-                        ranking += " AAA.";
+                        ranking += " S-";
                     case 7:
-                        ranking += " AAA";
+                        ranking += " S--";
                     case 8:
-                        ranking += " AA:";
+                        ranking += " AAAAA";
                     case 9:
-                        ranking += " AA.";
+                        ranking += " AAAA";
                     case 10:
-                        ranking += " AA";
+                        ranking += " AAA";
                     case 11:
-                        ranking += " A:";
+                        ranking += " AA";
                     case 12:
-                        ranking += " A.";
+                        ranking += " A++";
                     case 13:
-                        ranking += " A";
+                        ranking += " A+";
                     case 14:
-                        ranking += " B";
+                        ranking += " A";
                     case 15:
-                        ranking += " C";
+                        ranking += " B";
                     case 16:
-                        ranking += " D";
+                        ranking += " C";
                     case 17:
-                        ranking += " E";
+                        ranking += " D";
                     case 18:
-                        ranking += "F";
+                        ranking += " F";
                 }
                 break;
             }
@@ -95,9 +96,6 @@ class Ratings
 
         if (accuracy == 0)
             ranking = "N/A";
-		else if(FlxG.save.data.botplay && !PlayState.loadRep)
-			ranking = "BotPlay";
-
         return ranking;
     }
     
@@ -114,47 +112,46 @@ class Ratings
         // I HATE THIS IF CONDITION
         // IF LEMON SEES THIS I'M SORRY :(
 
-        // trace('Hit Info\nDifference: ' + noteDiff + '\nZone: ' + Conductor.safeZoneOffset * 1.5 + "\nTS: " + customTimeScale + "\nLate: " + 155 * customTimeScale);
+        //trace("hey you hit a note"); causes too much lag
 
-        if (FlxG.save.data.botplay && !PlayState.loadRep)
-            return "sick"; // FUNNY
-	
+        if (FlxG.save.data.botplay)
+            return "sick";
 
-        var rating = checkRating(noteDiff,customTimeScale);
+        if (noteDiff > 166 * customTimeScale) // so god damn early its a miss
+            return "miss";
 
+        if (noteDiff > 125 * customTimeScale) // way early
+            return "shit";
 
-        return rating;
-    }
+        else if (noteDiff > 90 * customTimeScale) // early
+            return "bad";
 
-    public static function checkRating(ms:Float, ts:Float)
-    {
-        var rating = "sick";
-        if (ms <= 166 * ts && ms >= 135 * ts)
-            rating = "shit";
-        if (ms < 135 * ts && ms >= 90 * ts) 
-            rating = "bad";
-        if (ms < 90 * ts && ms >= 45 * ts)
-            rating = "good";
-        if (ms < 45 * ts && ms >= -45 * ts)
-            rating = "sick";
-        if (ms > -90 * ts && ms <= -45 * ts)
-            rating = "good";
-        if (ms > -135 * ts && ms <= -90 * ts)
-            rating = "bad";
-        if (ms > -166 * ts && ms <= -135 * ts)
-            rating = "shit";
-        return rating;
+        else if (noteDiff > 65 * customTimeScale) // your kinda there
+            return "good";
+
+        else if (noteDiff < -60 * customTimeScale) // not really late
+            return "good";
+
+        else if (noteDiff < -90 * customTimeScale) // late
+            return "bad";
+
+        else if (noteDiff < -125 * customTimeScale) // late as fuck
+            return "shit";
+
+        else if (noteDiff < -166 * customTimeScale) // so god damn late its a miss
+            return "miss";
+
+        return "sick";
     }
 
     public static function CalculateRanking(score:Int,scoreDef:Int,nps:Int,maxNPS:Int,accuracy:Float):String
     {
-        return
-         (FlxG.save.data.npsDisplay ?																							// NPS Toggle
-         "NPS: " + nps + " (Max " + maxNPS + ")" + (!PlayStateChangeables.botPlay || PlayState.loadRep ? " | " : "") : "") +								// 	NPS
-         (!PlayStateChangeables.botPlay || PlayState.loadRep ? "Score:" + (Conductor.safeFrames != 10 ? score + " (" + scoreDef + ")" : "" + score) + 		// Score
-         (FlxG.save.data.accuracyDisplay ?																						// Accuracy Toggle
-         " | Combo Breaks:" + PlayState.misses + 																				// 	Misses/Combo Breaks
-         " | Accuracy:" + (PlayStateChangeables.botPlay && !PlayState.loadRep ? "N/A" : HelperFunctions.truncateFloat(accuracy, 2) + " %") +  				// 	Accuracy
-         " | " + GenerateLetterRank(accuracy) : "") : ""); 																		// 	Letter Rank
+        return 
+        (FlxG.save.data.npsDisplay ? "NPS: " + nps + " (Max " + maxNPS + ")" + (!FlxG.save.data.botplay ? " | " : "") : "") +	// NPS Toggle
+        "Score:" + (Conductor.safeFrames != 10 ? score + " (" + scoreDef + ")" : "" + score) + 							    // Score
+        " | Misses:" + PlayState.misses + 	                                                                                // Misses
+        " | Health:" + Math.floor(PlayState.instance.health * 500) / 10 + "%" +	                                              // Health             
+        " | Accuracy:" + (HelperFunctions.truncateFloat(accuracy, 2) + " %") +  			                             	// Accuracy
+        " | " + GenerateLetterRank(accuracy);          																		// Letter Rank
     }
 }
